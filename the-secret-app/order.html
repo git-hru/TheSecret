@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Place Your Order — The Secret</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+</head>
+<body class="page-order">
+
+  <div class="particles" id="particles"></div>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">✦ The Secret</a>
+      <div class="nav-links">
+        <a href="wishlist.html">My Wishlist</a>
+        <a href="ordered.html">My Wishes</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="order-main">
+    <div class="order-centering">
+      <p class="eyebrow">Step Into Receiving</p>
+
+      <div class="affirmation-block">
+        <p class="affirmation-text">
+          <em>"I am so happy and grateful now that</em>
+          <span class="blank-wrapper">
+            <input
+              type="text"
+              id="wish-blank"
+              class="blank-input"
+              placeholder="your wish comes true…"
+            />
+          </span>
+          <em>"</em>
+        </p>
+      </div>
+
+      <p class="order-instruction">
+        Fill in the blank above with the exact wish you want to place with the Universe.<br/>
+        Write it as if it has already happened. Feel the gratitude.
+      </p>
+
+      <button class="btn-primary btn-large" id="place-order-btn" onclick="placeOrder()">
+        <span class="btn-glow"></span>
+        ✦ Place My Order with the Universe
+      </button>
+    </div>
+  </main>
+
+  <!-- Sending overlay -->
+  <div class="sending-overlay" id="sending-overlay">
+    <div class="sending-card">
+      <div class="sending-star spinning">✦</div>
+      <p class="sending-text">The Universe has received your order…</p>
+      <p class="sending-sub">Your wish is already on its way.</p>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/email.js"></script>
+  <script>
+    generateParticles();
+    // Pre-fill from wishlist selection if coming from wishlist
+    window.addEventListener('DOMContentLoaded', () => {
+      const pending = sessionStorage.getItem('pendingOrderWish');
+      if (pending) {
+        document.getElementById('wish-blank').value = pending;
+        sessionStorage.removeItem('pendingOrderWish');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Secret — Ask. Believe. Receive.</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+</head>
+<body class="page-home">
+
+  <!-- Floating particles -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">✦ The Secret</a>
+      <div class="nav-links">
+        <a href="wishlist.html">My Wishlist</a>
+        <a href="ordered.html">My Wishes</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero / Ask Section -->
+  <main class="home-main">
+    <div class="stardust-ring"></div>
+
+    <section class="ask-section">
+      <p class="eyebrow">The First Step</p>
+      <h1 class="headline">Ask the Universe</h1>
+      <p class="subtext">Whatever you can imagine, you can have. Speak your desire and the Universe begins to conspire in your favour.</p>
+
+      <!-- Email input -->
+      <div class="input-group" id="email-group">
+        <label class="input-label" for="user-email">Your email — so the Universe can confirm your wish</label>
+        <input type="email" id="user-email" class="wish-input" placeholder="your@email.com" autocomplete="email" />
+      </div>
+
+      <!-- Wish input -->
+      <div class="input-group" id="wish-group">
+        <label class="input-label" for="wish-input">What is your heart's deepest desire?</label>
+        <textarea id="wish-input" class="wish-input wish-textarea" placeholder="I wish to…" rows="3"></textarea>
+      </div>
+
+      <button class="btn-primary" id="wish-btn" onclick="handleWish()">
+        <span class="btn-glow"></span>
+        Send to the Universe ✦
+      </button>
+    </section>
+
+    <!-- Decision modal -->
+    <div class="modal-overlay" id="decision-modal">
+      <div class="modal-card">
+        <div class="modal-star">✦</div>
+        <h2 class="modal-title">Your wish has been heard</h2>
+        <p class="modal-wish-preview" id="modal-wish-text"></p>
+        <p class="modal-question">What would you like to do with this wish?</p>
+        <div class="modal-actions">
+          <button class="btn-order" onclick="orderNow()">
+            Order Now
+            <span class="btn-sub">I am ready to receive</span>
+          </button>
+          <button class="btn-wishlist" onclick="addToWishlist()">
+            Save to Wishlist
+            <span class="btn-sub">I'll order when I'm ready</span>
+          </button>
+        </div>
+        <button class="modal-close" onclick="closeModal()">✕</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="js/app.js"></script>
+  <script>generateParticles();</script>
+</body>
+</html>
