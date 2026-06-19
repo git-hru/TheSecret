@@ -2,10 +2,10 @@
 // Sign up at https://www.emailjs.com — it's free for 200 emails/month
 // Then replace the three placeholders below with your real values.
 
-const EMAILJS_CONFIG = {
-  publicKey:   'ciMFRwr7ygyct1_Fl',   // Account → API Keys
-  serviceId:   'service_ggrqozk',           // Email Services tab
-  templateId:  'template_hpbvubo',          // Email Templates tab
+const EMAILJS_CONFIG = (typeof window !== 'undefined' && window.EMAILJS_CONFIG) ? window.EMAILJS_CONFIG : {
+  publicKey:   'YOUR_EMAILJS_PUBLIC_KEY',   // Account → API Keys
+  serviceId:   'YOUR_SERVICE_ID',           // Email Services tab
+  templateId:  'YOUR_TEMPLATE_ID',          // Email Templates tab
 };
 
 // Initialize EmailJS

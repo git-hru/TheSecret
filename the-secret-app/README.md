@@ -62,13 +62,19 @@ The Universe
 - Dashboard → **Account** → **API Keys**
 - Copy your **Public Key**
 
-### Step 5 — Update the config
-Open `js/email.js` and replace:
-```js
-publicKey:  'YOUR_EMAILJS_PUBLIC_KEY',   ← paste your Public Key
-serviceId:  'YOUR_SERVICE_ID',           ← paste your Service ID
-templateId: 'YOUR_TEMPLATE_ID',          ← paste your Template ID
+### Step 5 — Provide your EmailJS keys (recommended)
+Create a local `.env` file from the provided example and start the small local server that injects the keys into the client:
+
+```bash
+cp .env.example .env
+# Edit .env and paste your keys
+npm install
+npm start
 ```
+
+Open `http://localhost:3000` in your browser. The server serves the static site and provides `/env-config.js` which sets `window.EMAILJS_CONFIG` using the values from `.env`. This avoids committing secrets into the repository.
+
+If you prefer not to run the server, you can still set the keys manually in `js/email.js` — but this is less secure for shared repos.
 
 ---
 
